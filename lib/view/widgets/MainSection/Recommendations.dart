@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+
 import '../../../constant.dart';
 import '../../../model/Recommendation.dart';
+
 class Recommendations extends StatelessWidget {
   const Recommendations({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,6 +20,8 @@ class Recommendations extends StatelessWidget {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            physics:const ScrollPhysics(),
+
             child: Row(
               children: List.generate(
                   demoRecommendation.length,

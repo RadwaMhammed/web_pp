@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../Responsive.dart';
 import '../../../constant.dart';
 import '../../../model/demoproject.dart';
+
 class Projects extends StatelessWidget {
   const Projects({Key? key}) : super(key: key);
 
@@ -17,6 +19,7 @@ class Projects extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline6),
           ),
           buildGridView(
+              context: context,
               GitemCount: demoProjectlist.length,
               GitemBuilder: (context, index) {
                 return Container(
@@ -40,9 +43,10 @@ class Projects extends StatelessWidget {
                       ),
                       Text(
                         "${demoProjectlist[index].Descraption}",
-                        maxLines: 2,
+                        maxLines: Responsive.isDesktop(context) ? 2 : 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(height: 1.7),
+                        style: TextStyle(
+                            height: Responsive.isDesktop(context) ? 1.7 : 0),
                       ),
                       SizedBox(
                         height: hDefaultPadding,
@@ -60,12 +64,17 @@ class Projects extends StatelessWidget {
     );
   }
 }
-buildGridView({required int GitemCount, var GitemBuilder}) {
+
+buildGridView({required int GitemCount, var GitemBuilder, var context}) {
   return GridView.builder(
     shrinkWrap: true,
     itemCount: GitemCount,
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+        crossAxisCount: Responsive.isDesktop(context)
+            ? 3
+            : Responsive.isMobile(context)
+            ? 1
+            : 2,
         mainAxisSpacing: hDefaultPadding,
         crossAxisSpacing: hDefaultPadding,
         childAspectRatio: 0.75),

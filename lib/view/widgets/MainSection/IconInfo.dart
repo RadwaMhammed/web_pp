@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
+
 import '../../../constant.dart';
+
 class IconInfo extends StatelessWidget {
   const IconInfo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(

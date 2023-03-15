@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 class InFo extends StatelessWidget {
   const InFo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,6 +16,7 @@ class InFo extends StatelessWidget {
     );
   }
 }
+
 Padding buildConyactInfo({required String Title, required String subTitle}) {
   return Padding(
     padding: const EdgeInsets.all(8.0),

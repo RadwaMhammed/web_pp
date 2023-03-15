@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../../../constant.dart';
 import 'package:flutter_svg/svg.dart';
+
 class Goals extends StatelessWidget {
   const Goals({Key? key}) : super(key: key);
 
@@ -24,6 +26,7 @@ class Goals extends StatelessWidget {
     );
   }
 }
+
 buildGoals({required String textGoal}) {
   return Padding(
     padding: const EdgeInsets.all(hDefaultPadding / 2),

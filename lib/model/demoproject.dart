@@ -7,6 +7,7 @@ class demoProject {
     required this.Descraption,
   });
 }
+
 List<demoProject> demoProjectlist = [
   demoProject(
       Title: "A fresh start with our houses",

@@ -8,6 +8,7 @@ class Recommendation {
     this.text,
   });
 }
+
 List<Recommendation> demoRecommendation = [
   Recommendation(
     name: "Simeon Cox",

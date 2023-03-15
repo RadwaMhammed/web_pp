@@ -1,7 +1,12 @@
+
 import 'package:flutter/material.dart';
+
+import '../../../Responsive.dart';
 import '../../../constant.dart';
+
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -23,7 +28,13 @@ class HomeBanner extends StatelessWidget {
                 children: [
                   Text(
                     " Build a greate future   \n for all of us!  ",
-                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                    style: Responsive.isDesktop(context)
+                        ? Theme.of(context).textTheme.headline3!.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: hDarkColor.withOpacity(0.1),
+                    )
+                        : Theme.of(context).textTheme.headline6!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       backgroundColor: hDarkColor.withOpacity(0.1),

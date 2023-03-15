@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
+
 import '../../../constant.dart';
+
 class Logo extends StatelessWidget {
   const Logo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
